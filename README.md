@@ -2,7 +2,7 @@
 
 ---
 
-## Project Introduction
+## Introduction
 **WitchCrafted PCB – Spell Touch Circle** is a **Halloween-themed interactive magic board** powered by **Arduino Uno**.  
 Each button represents a magical rune — when pressed, it lights up an RGB LED in colorful patterns and plays a short sound effect, simulating a spell-casting experience.  
 
@@ -10,7 +10,7 @@ This project blends **electronics with art**, making it perfect for beginners, m
 
 ---
 
-## Project Function
+## Function
 - Uses **five buttons** to simulate “touch” magic symbols.  
 - Each button triggers a **different RGB color pattern** and **buzzer tone**.  
 - Demonstrates **PWM LED control**, **digital inputs**, and **tone generation**.  
@@ -19,7 +19,7 @@ This project blends **electronics with art**, making it perfect for beginners, m
 
 ---
 
-## Project Parameters
+## Parameters
 - **Microcontroller:** Arduino Uno  
 - **Inputs:** 5 push buttons (rune pads)  
 - **Outputs:** 1 RGB LED (common cathode) + Piezo buzzer  
@@ -29,7 +29,7 @@ This project blends **electronics with art**, making it perfect for beginners, m
 
 ---
 
-## Principle Analysis (Hardware Description)
+## Hardware Description
 The project is divided into the following functional blocks:
 
 1. **Main Control:**  
@@ -137,14 +137,13 @@ The board lights up beautifully in dark rooms — perfect for **Halloween displa
 * [Tinkercad Circuits – Free Simulator](https://www.tinkercad.com/circuits)
 * [Arduino IDE Download](https://www.arduino.cc/en/software)
 * [JLCPCB PCB Fabrication Service](https://jlcpcb.com)
-* [Project Repository Template](https://github.com/)
 
 ---
 
 ### Author
 
-**Prince K.**
-*Electronics Engineering Student | Embedded Systems & Creative Circuits Enthusiast*
+**Sachin Chandra**
+*2nd sem | Electronics Engineering student*
 
 ---
 
@@ -164,7 +163,5 @@ Feel free to remix, modify, and share — just give proper credit.
 Would you like me to:  
 1️⃣ Add a **schematic diagram image (Arduino + LED + buttons)** to insert into the repo automatically,  
 or  
-2️⃣ Create a **Tinkercad simulation link + screenshot** for your README “Demo” section?  
-
-Both help your GitHub project look more professional and contest-ready.
+2️⃣ Create a **Tinkercad simulation link + screenshot** for your README “Demo” section? 
 ```
