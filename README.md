@@ -2,7 +2,7 @@
 
 ---
 
-## 🎃 Project Introduction
+##  Project Introduction
 **WitchCrafted PCB – Spell Touch Circle** is a **Halloween-themed interactive magic board** powered by **Arduino Uno**.  
 Each button represents a magical rune — when pressed, it lights up an RGB LED in colorful patterns and plays a short sound effect, simulating a spell-casting experience.  
 
@@ -10,7 +10,7 @@ This project blends **electronics with art**, making it perfect for beginners, m
 
 ---
 
-## ✨ Project Function
+##  Project Function
 - Uses **five buttons** to simulate “touch” magic symbols.  
 - Each button triggers a **different RGB color pattern** and **buzzer tone**.  
 - Demonstrates **PWM LED control**, **digital inputs**, and **tone generation**.  
@@ -19,7 +19,7 @@ This project blends **electronics with art**, making it perfect for beginners, m
 
 ---
 
-## ⚙️ Project Parameters
+##  Project Parameters
 - **Microcontroller:** Arduino Uno  
 - **Inputs:** 5 push buttons (rune pads)  
 - **Outputs:** 1 RGB LED (common cathode) + Piezo buzzer  
@@ -29,7 +29,7 @@ This project blends **electronics with art**, making it perfect for beginners, m
 
 ---
 
-## 🔩 Principle Analysis (Hardware Description)
+##  Principle Analysis (Hardware Description)
 The project is divided into the following functional blocks:
 
 1. **Main Control:**  
@@ -48,7 +48,7 @@ The project is divided into the following functional blocks:
 
 ---
 
-## 💻 Software Code
+##  Software Code
 ```cpp
 #define R 3
 #define G 5
