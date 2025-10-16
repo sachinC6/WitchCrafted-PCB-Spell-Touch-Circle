@@ -156,9 +156,8 @@ Feel free to remix, modify, and share — just give proper credit.
 
 *"When technology meets magic, circuits come alive."*
 
-```
 
----
-#1️⃣<img width="1536" height="1024" alt="1acbe6d6-d359-4a64-87c0-a1e2288bfbba" src="https://github.com/user-attachments/assets/fbdad081-26e2-4554-a5c1-3bdb8f6179fa" />
+1️⃣schematic image (Arduino Uno + RGB LED + buttons + buzzer)
+<img width="1536" height="1024" alt="1acbe6d6-d359-4a64-87c0-a1e2288bfbba" src="https://github.com/user-attachments/assets/fbdad081-26e2-4554-a5c1-3bdb8f6179fa" />
 
 ```
