@@ -1,72 +1,100 @@
-# Project Introduction
+# 🧙‍♀️ WitchCrafted PCB – Spell Touch Circle (Arduino Uno Edition)
 
-This project is based on Arduino Uno and designed to create a Halloween-themed “magic spellboard” that reacts to touch or button inputs.
-Each input represents a magical rune; when pressed, the board lights up in vibrant colors and emits sound, simulating a spell-casting effect.
+---
 
-# Project Function
+## 🎃 Project Introduction
+**WitchCrafted PCB – Spell Touch Circle** is a **Halloween-themed interactive magic board** powered by **Arduino Uno**.  
+Each button represents a magical rune — when pressed, it lights up an RGB LED in colorful patterns and plays a short sound effect, simulating a spell-casting experience.  
 
-This design is based on the Arduino Uno microcontroller. It uses five buttons to represent touch-sensitive magical runes.
-Each button triggers a unique RGB lighting pattern and buzzer sound, simulating different magical spells.
-The project can serve as a Halloween decoration, interactive cosplay prop, or creative learning board for beginners exploring microcontrollers and LEDs.
-It demonstrates the use of PWM control, digital inputs, and sound generation in a fun and artistic way.
-# Project Parameters
+This project blends **electronics with art**, making it perfect for beginners, makers, and Halloween contest entries such as **JLCPCB’s “Colorful Silkscreen Magic”**.
 
-The design uses Arduino Uno as the main control unit.
+---
 
-- Five push buttons act as “touch pads” to cast spells.
-- One RGB LED (common cathode) provides multicolor glowing effects.
-- One Piezo buzzer produces short tones corresponding to each spell.
-- Resistors (220Ω) are used for current limiting on each LED pin.
-- Powered by USB or 9V battery (through the Arduino).
+## ✨ Project Function
+- Uses **five buttons** to simulate “touch” magic symbols.  
+- Each button triggers a **different RGB color pattern** and **buzzer tone**.  
+- Demonstrates **PWM LED control**, **digital inputs**, and **tone generation**.  
+- Works as a **Halloween prop**, **table decoration**, or **learning circuit**.  
+- Designed to be simple enough to **simulate in Tinkercad** or **build physically**.  
 
+---
 
-# Principle Analysis (Hardware Description)
+## ⚙️ Project Parameters
+- **Microcontroller:** Arduino Uno  
+- **Inputs:** 5 push buttons (rune pads)  
+- **Outputs:** 1 RGB LED (common cathode) + Piezo buzzer  
+- **Resistors:** 220 Ω for each LED line  
+- **Power:** USB or 9 V battery  
+- **Simulation:** Fully supported in [Tinkercad Circuits](https://www.tinkercad.com/circuits) or [Wokwi](https://wokwi.com)  
 
-```
-This project consists of three main parts:
+---
 
-1. Main Control Part: 
-Arduino Uno is the heart of the project, processing input signals and controlling output LEDs and the buzzer.
+## 🔩 Principle Analysis (Hardware Description)
+The project is divided into the following functional blocks:
 
-2. Input Part: 
-Five push buttons are connected to digital pins (2, 4, 7, 8, 10) with internal pull-up resistors enabled.
-When a button is pressed, it connects to ground, signaling Arduino to activate the corresponding spell.
+1. **Main Control:**  
+   - Arduino Uno processes input from buttons and drives the LED and buzzer.
 
-3. Output Part:
-An RGB LED is connected to PWM pins (3, 5, 6) to display color combinations.
-A buzzer is connected to pin 9 to generate sound effects for each spell.
-The LED brightness and colors are controlled through analogWrite() PWM signals.
+2. **Input Section:**  
+   - Five push buttons connected to digital pins (2, 4, 7, 8, 10) with internal pull-ups enabled.  
+   - When pressed, the pin reads LOW, triggering a “spell.”
 
-4. Power Supply:
-Powered via USB or 9V battery.
+3. **Output Section:**  
+   - RGB LED driven via PWM pins 3 (R), 5 (G), 6 (B).  
+   - Piezo buzzer connected to pin 9 for tone output.  
 
-```
-# Software code
-` ` `
-You can embed the code here.
-` ` `
-code here.
-[https://github.com/](https://github.com/)
-# Announcements
+4. **Power Supply:**  
+   - Can be powered via USB or 9 V battery through the Arduino board.
 
-In simulation, use push buttons instead of actual touch sensors.
-Always use 220Ω resistors in series with each RGB LED pin to prevent damage.
-When building the PCB, ensure proper copper fill and trace width for RGB current lines.
-If using a battery, make sure polarity is correct before powering the circuit.
-For real-world builds, you can design your PCB in a circular magic-board shape with colorful silkscreen symbols for aesthetic appeal.
+---
 
-# Assembling Processes
+## 💻 Software Code
+```cpp
+#define R 3
+#define G 5
+#define B 6
+#define buzzer 9
 
-```
+int buttons[5] = {2, 4, 7, 8, 10};
 
-1. Connect push buttons to Arduino pins 2, 4, 7, 8, 10 with one side to ground.
-2. Connect RGB LED pins to Arduino pins 3 (R), 5 (G), 6 (B) via 220Ω resistors.
-3. Connect buzzer to pin 9 and GND.
-4. Power the Arduino through USB or 9V battery.
-5. Upload the code and test: pressing each button lights a different color and sound effect.
-6. _*(Optional)*_ Design the PCB in circular form, adding Halloween-style silkscreen art such as pentagram lines or runes.
-```
-# Finished Product Display
+void setup() {
+  pinMode(R, OUTPUT);
+  pinMode(G, OUTPUT);
+  pinMode(B, OUTPUT);
+  pinMode(buzzer, OUTPUT);
 
-When assembled, pressing each rune button produces a magical RGB glow with matching sound, giving a “spell-casting” illusion.
-The final version can be built as a round PCB with colorful silkscreen art showing runes or stars, glowing beautifully under LED light — perfect for Halloween decorations, art-tech projects, or interactive cosplay props.
+  for (int i = 0; i < 5; i++) pinMode(buttons[i], INPUT_PULLUP);
+}
+
+void loop() {
+  for (int i = 0; i < 5; i++) {
+    if (digitalRead(buttons[i]) == LOW) {
+      castSpell(i);
+    }
+  }
+}
+
+void castSpell(int spell) {
+  switch (spell) {
+    case 0: setColor(255, 0, 0); tone(buzzer, 400, 200); break;  // Red spell
+    case 1: setColor(0, 255, 0); tone(buzzer, 600, 200); break;  // Green spell
+    case 2: setColor(0, 0, 255); tone(buzzer, 800, 200); break;  // Blue spell
+    case 3: setColor(255, 255, 0); tone(buzzer, 1000, 200); break; // Yellow spell
+    case 4: rainbowEffect(); tone(buzzer, 1200, 200); break;  // Rainbow spell
+  }
+  delay(500);
+  setColor(0, 0, 0);
+}
+
+void setColor(int red, int green, int blue) {
+  analogWrite(R, red);
+  analogWrite(G, green);
+  analogWrite(B, blue);
+}
+
+void rainbowEffect() {
+  for (int r = 0; r < 255; r++) {
+    setColor(r, 255 - r, 128);
+    delay(5);
+  }
+}
