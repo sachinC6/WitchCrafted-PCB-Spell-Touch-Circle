@@ -160,8 +160,8 @@ Feel free to remix, modify, and share — just give proper credit.
 
 ---
 
-Would you like me to:  
-1️⃣ Add a **schematic diagram image (Arduino + LED + buttons)** to insert into the repo automatically,  
-or  
+
+1️⃣ <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/fb7c7e17-87db-42a8-9825-3ca3fd2f294e" />
+
 2️⃣ Create a **Tinkercad simulation link + screenshot** for your README “Demo” section? 
 ```
