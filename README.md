@@ -159,9 +159,6 @@ Feel free to remix, modify, and share — just give proper credit.
 ```
 
 ---
+#1️⃣<img width="1536" height="1024" alt="1acbe6d6-d359-4a64-87c0-a1e2288bfbba" src="https://github.com/user-attachments/assets/fbdad081-26e2-4554-a5c1-3bdb8f6179fa" />
 
-
-1️⃣ <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/fb7c7e17-87db-42a8-9825-3ca3fd2f294e" />
-
-2️⃣ Create a **Tinkercad simulation link + screenshot** for your README “Demo” section? 
 ```
