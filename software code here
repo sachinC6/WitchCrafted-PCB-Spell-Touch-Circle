@@ -1,0 +1,48 @@
+#define R 3
+#define G 5
+#define B 6
+#define buzzer 9
+
+int buttons[5] = {2, 4, 7, 8, 10};
+
+void setup() {
+  pinMode(R, OUTPUT);
+  pinMode(G, OUTPUT);
+  pinMode(B, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+
+  for (int i = 0; i < 5; i++) pinMode(buttons[i], INPUT_PULLUP);
+}
+
+void loop() {
+  for (int i = 0; i < 5; i++) {
+    if (digitalRead(buttons[i]) == LOW) {
+      castSpell(i);
+    }
+  }
+}
+
+void castSpell(int spell) {
+  switch (spell) {
+    case 0: setColor(255, 0, 0); tone(buzzer, 400, 200); break;  // Red spell
+    case 1: setColor(0, 255, 0); tone(buzzer, 600, 200); break;  // Green spell
+    case 2: setColor(0, 0, 255); tone(buzzer, 800, 200); break;  // Blue spell
+    case 3: setColor(255, 255, 0); tone(buzzer, 1000, 200); break; // Yellow spell
+    case 4: rainbowEffect(); tone(buzzer, 1200, 200); break;  // Rainbow spell
+  }
+  delay(500);
+  setColor(0, 0, 0);
+}
+
+void setColor(int red, int green, int blue) {
+  analogWrite(R, red);
+  analogWrite(G, green);
+  analogWrite(B, blue);
+}
+
+void rainbowEffect() {
+  for (int r = 0; r < 255; r++) {
+    setColor(r, 255 - r, 128);
+    delay(5);
+  }
+}
